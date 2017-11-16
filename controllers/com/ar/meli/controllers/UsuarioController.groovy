@@ -28,7 +28,7 @@ class UsuarioController {
 	def login(){
 		if(Usuario.findByEmailAndPassword(params.get("email"),params.get("password"))){
 			flash.message = "Login Success"
-			session.usuario = params.get("email")
+			session.usuario = Usuario.findByEmail(params.get("email"))
 			redirect(uri: '/')
 		}
 		else{
