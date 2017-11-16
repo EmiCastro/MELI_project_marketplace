@@ -18,24 +18,34 @@
 		<g:layoutHead/>
 	</head>
 	<body>
+		<div class="header">
+			<a href="#"><img src="meli-logo.png" alt="Nuestro Logo" height=50px/></a>
+			<div class="header-right d-flex flex-row-reverse">
+				<nav>
+					<ul>
+						<li><a href="#">Regístrate</a></li>
+						<li>
+							<g:if test = "${session.usuario != null }"></g:if>
+							<g:if test="${session.usuario == null }"> 				
+							<a class="button red" href="Usuario"><g:message code=""/>Ingresa</a>
+							</g:if>
+							<g:else>
+							<span>Hola, ${session.usuario}</span>
+							<a href="${createLink(controller:'Usuario', action:'logout')}"> Logout</a></li>
+							</g:else>
+						</li>
+						<li><a href="#">Info</a></li>
+						<li><a href="#">Vende</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
 		<nav class="navbar navbar-default">
 			<div class="col-md-1 col-xs-1">
 			
 			</div>
 			<div class="col-md-7 col-sm-7">
 				<h3>Amazon</h3>
-			</div>
-			<div class="col-md-4 col-xs-4 text-center bottom-align-text">
-				<g:if test = "${session.usuario != null }">
-					
-				</g:if>
-				<g:if test="${session.usuario == null }"> 				
-					<a class="btn btn-default" href="Usuario"><g:message code="Login"/></a>
-				</g:if>
-				<g:else>
-					<span>Hola, ${session.usuario}</span>
-					<a href="${createLink(controller:'Usuario', action:'logout')}"> Logout</a></li>
-				</g:else>
 			</div>
 		</nav>
 		<div class="col-md-2 col-xs-3 list-group">			
