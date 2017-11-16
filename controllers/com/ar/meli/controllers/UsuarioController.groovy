@@ -24,11 +24,6 @@ class UsuarioController {
     def create() {
         respond new Usuario(params)
     }
-	
-	def logout() {
-		session.invalidate()
-		redirect (uri: '/')
-	}
 
     @Transactional
     def save(Usuario usuarioInstance) {

@@ -44,7 +44,7 @@
 							</g:if>
 							<g:else>
 								<span>Hola, ${session.usuario.email}</span>
-								<a class ="button red" href="${createLink(controller:'Usuario', action:'logout')}"> Logout</a></li>
+								<a class ="button red" href="${createLink(controller:'Login', action:'logout')}"> Logout</a></li>
 								<li><a href="#">Vende</a></li>
 							</g:else>
 						</li>

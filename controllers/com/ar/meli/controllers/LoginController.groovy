@@ -24,4 +24,9 @@ class LoginController {
 		}
 	}
 	
+	def logout() {
+		session.invalidate()
+		redirect (uri: '/')
+	}
+	
 }
