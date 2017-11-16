@@ -23,11 +23,6 @@ class PublicacionController {
     def create() {
         respond new Publicacion(params)
     }
-	
-	def comprar(Publicacion publicacionInstance, Usuario comprador) {
-		respond publicacionInstance.comprar(comprador)
-		
-	}
 
     @Transactional
     def save(Publicacion publicacionInstance) {

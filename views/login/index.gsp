@@ -17,5 +17,6 @@
 				<g:submitButton name="create" class="save" value="Login" />
 			</fieldset>
 		</g:form>
+		
 	</body>
 </html>
