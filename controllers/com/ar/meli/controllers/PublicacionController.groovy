@@ -1,4 +1,4 @@
-package controllers
+package com.ar.meli.controllers
 
 
 import static org.springframework.http.HttpStatus.*

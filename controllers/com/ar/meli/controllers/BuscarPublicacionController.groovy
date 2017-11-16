@@ -1,4 +1,4 @@
-package controllers
+package com.ar.meli.controllers
 
 
 class BuscarPublicacionController {
