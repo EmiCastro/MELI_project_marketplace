@@ -27,7 +27,7 @@
 						<li>
 							<g:if test = "${session.usuario != null }"></g:if>
 							<g:if test="${session.usuario == null }"> 				
-							<a class="button red" href="Usuario"><g:message code=""/>Ingresa</a>
+							<a class="button red" href="/Meli/Usuario"><g:message code=""/>Ingresa</a>
 							</g:if>
 							<g:else>
 							<span>Hola, ${session.usuario}</span>
@@ -49,7 +49,7 @@
 			</div>
 		</nav>
 		<div class="col-md-2 col-xs-3 list-group">			
-			<a class = 'list-group-item'href="#"> Buscar publicaciones</a></li>
+			<a class = 'list-group-item'href="${createLink(controller:'BuscarPublicacion', action:'buscarPorTitulo')}"> Buscar publicaciones</a></li>
 		</div>
 		<g:layoutBody/>
 	</body>
