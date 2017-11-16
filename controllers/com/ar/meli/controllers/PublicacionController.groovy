@@ -34,7 +34,7 @@ class PublicacionController {
             notFound()
             return
         }
-
+		
         if (publicacionInstance.hasErrors()) {
             respond publicacionInstance.errors, view:'create'
             return
