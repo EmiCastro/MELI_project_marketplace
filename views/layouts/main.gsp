@@ -28,14 +28,15 @@
 							<g:if test="${session.usuario == null }"> 				
 								<li><a class="button red" href="${createLink(controller:'Usuario', action:'create') }">Regístrate</a></li>
 								<a class="button red" href="/Meli/Usuario"><g:message code=""/>Ingresa</a>
+								
 							</g:if>
 							<g:else>
-							<span>Hola, ${session.usuario}</span>
-							<a href="${createLink(controller:'Usuario', action:'logout')}"> Logout</a></li>
+								<span>Hola, ${session.usuario}</span>
+								<a href="${createLink(controller:'Usuario', action:'logout')}"> Logout</a></li>
+								<li><a href="#">Vende</a></li>
 							</g:else>
 						</li>
-						<li><a href="">Info</a></li>
-						<li><a href="#">Vende</a></li>
+						<li><a href="">Info</a></li>							
 					</ul>
 				</nav>
 			</div>
