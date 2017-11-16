@@ -32,6 +32,8 @@
 					
 						<g:sortableColumn property="fechaVencimiento" title="${message(code: 'publicacion.fechaVencimiento.label', default: 'Fecha Vencimiento')}" />
 					
+						<th><g:message code="publicacion.usuario.label" default="Usuario" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -46,12 +48,13 @@
 					
 						<td><g:formatDate date="${publicacionInstance.fechaVencimiento}" /></td>
 					
+						<td>${fieldValue(bean: publicacionInstance, field: "usuario")}</td>
+					
 					</tr>
 				</g:each>
 				</tbody>
 			</table>
-			<div class="pagination">
-				<g:paginate total="${publicacionInstanceCount ?: 0}" />
+			
 			</div>
 		</div>
 	</body>

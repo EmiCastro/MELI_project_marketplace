@@ -6,6 +6,9 @@ class Publicacion {
 	String descripcion
 	Date fechaCreacion
 	Date fechaVencimiento
+	Usuario usuario
+	
+	static belongsTo = [usuario: Usuario]
 	
 	
 	static constraints = {
@@ -15,4 +18,5 @@ class Publicacion {
 	Boolean contiene(String query) {
 		return(titulo.contains(query))
 	}
+	
 }

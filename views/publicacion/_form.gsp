@@ -38,3 +38,12 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: publicacionInstance, field: 'usuario', 'error')} required">
+	<label for="usuario">
+		<g:message code="publicacion.usuario.label" default="Usuario" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="usuario" name="usuario.id" from="${Usuario.list()}" optionKey="id" required="" value="${publicacionInstance?.usuario?.id}" class="many-to-one"/>
+
+</div>
+
