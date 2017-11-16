@@ -52,33 +52,6 @@ class PublicacionController {
         }
     }
 
-    def edit(Publicacion publicacionInstance) {
-        respond publicacionInstance
-    }
-
-    @Transactional
-    def update(Publicacion publicacionInstance) {
-        if (publicacionInstance == null) {
-            notFound()
-            return
-        }
-
-        if (publicacionInstance.hasErrors()) {
-            respond publicacionInstance.errors, view:'edit'
-            return
-        }
-
-        publicacionInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Publicacion.label', default: 'Publicacion'), publicacionInstance.id])
-                redirect publicacionInstance
-            }
-            '*'{ respond publicacionInstance, [status: OK] }
-        }
-    }
-
     @Transactional
     def delete(Publicacion publicacionInstance) {
 

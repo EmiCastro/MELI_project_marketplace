@@ -38,3 +38,11 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: publicacionInstance, field: 'nuevo', 'error')} required">
+	<label for="nuevo">
+		<g:message code="publicacion.nuevo.label" default="Nuevo?" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:checkBox name="nuevo" value="${publicacionInstance?.nuevo}"/>
+</div>
+
