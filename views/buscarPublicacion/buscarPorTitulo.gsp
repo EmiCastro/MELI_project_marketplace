@@ -8,7 +8,7 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<h1>${flash.message}</h1>
+		<h1>${flash.message}</h1><%--
 		<g:form url="[controller:BuscarPublicacion, action:'buscarPorTitulo']" >
 			<fieldset class="form">
 				<div >
@@ -19,7 +19,7 @@
 				<g:submitButton name="create" class="save" value="Buscar" />
 			</fieldset>
 		</g:form>
-		<h1>Coincidencias: ${publicaciones.size() }</h1>
+		--%><h1>Coincidencias: ${publicaciones.size() }</h1>
 			<table>
 			<thead>
 					<tr>
