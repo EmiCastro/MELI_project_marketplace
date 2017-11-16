@@ -21,8 +21,17 @@
 		<div class="header">
 			<a href="#"><img src="meli-logo.png" alt="Nuestro Logo" height=50px/></a>
 			<div class="header-center">
-				<a class = 'list-group-item'href="${createLink(controller:'BuscarPublicacion', action:'buscarPorTitulo')}"> Buscar publicaciones</a>
+				<div class="flexsearch">
+					<div class="flexsearch-wrapper">
+						<form class="flexsearch-form" action="${createLink(controller:'BuscarPublicacion', action:'buscarPorTitulo')}" method="post">
+							<div class="flexsearch-input-wrapper">
+								<input class="flexsearch-input" type="search" placeholder="Busca un producto">
+							</div>
+								<input class="flexsearch-submit" type="submit" value=""/>
+						</form>
+					</div>
 			</div>
+		</div>
 			<div class="header-right d-flex flex-row-reverse">
 				<nav>
 					<ul>

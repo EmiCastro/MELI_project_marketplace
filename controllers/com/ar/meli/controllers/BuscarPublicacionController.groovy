@@ -1,4 +1,6 @@
 package com.ar.meli.controllers
+import com.ar.meli.models.Publicacion
+import com.ar.meli.models.Usuario
 
 
 class BuscarPublicacionController {
