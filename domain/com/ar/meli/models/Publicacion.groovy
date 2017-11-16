@@ -20,8 +20,8 @@ class Publicacion {
 		return(titulo.contains(query))
 	}
 	
-	void comprar(Usuario comprador){
-		usuario = comprador;
-	}
+//	void comprar(Usuario comprador){
+//		usuario = comprador
+//	}
 	
 }

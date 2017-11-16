@@ -11,7 +11,7 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class UsuarioController {
 
-    static allowedMethods = [login:"POST", save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index() {
 
@@ -24,18 +24,6 @@ class UsuarioController {
     def create() {
         respond new Usuario(params)
     }
-	
-	def login(){
-		if(Usuario.findByEmailAndPassword(params.get("email"),params.get("password"))){
-			flash.message = "Login Success"
-			session.usuario = Usuario.findByEmail(params.get("email"))
-			redirect(uri: '/')
-		}
-		else{
-			flash.message = "Usuario y contraseña incorrectos"	
-			redirect(action: 'index')
-		}
-	}
 	
 	def logout() {
 		session.invalidate()

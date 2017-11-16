@@ -26,6 +26,7 @@ class PublicacionController {
 	
 	def comprar(Publicacion publicacionInstance, Usuario comprador) {
 		respond publicacionInstance.comprar(comprador)
+		
 	}
 
     @Transactional

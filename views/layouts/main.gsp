@@ -39,7 +39,7 @@
 							<g:if test = "${session.usuario != null }"></g:if>
 							<g:if test="${session.usuario == null }"> 				
 								<li><a class="button red" href="${createLink(controller:'Usuario', action:'create') }">Regístrate</a></li>
-								<a class="button red" href="/Meli/Usuario"><g:message code=""/>Ingresa</a>
+								<a class="button red" href="/Meli/Login"><g:message code=""/>Ingresa</a>
 								
 							</g:if>
 							<g:else>
