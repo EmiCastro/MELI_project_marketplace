@@ -21,7 +21,7 @@ class PublicacionController {
     }
 
     def create() {
-        respond new Publicacion(params)
+        respond new Publicacion()
     }
 	
 	def comprar(Publicacion publicacionInstance, Usuario comprador) {
@@ -31,17 +31,17 @@ class PublicacionController {
 
     @Transactional
     def save(Publicacion publicacionInstance) {
+		publicacionInstance.usuario = session.usuario
+		
 		if (publicacionInstance == null) {
             notFound()
             return
         }
 		
-        if (publicacionInstance.hasErrors()) {
+        if (!publicacionInstance.save()) {
             respond publicacionInstance.errors, view:'create'
             return
         }
-
-        publicacionInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
