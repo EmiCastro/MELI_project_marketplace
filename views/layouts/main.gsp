@@ -18,29 +18,33 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-		<nav class="navbar navbar-default">
-			<div class="col-md-1 col-xs-1">
-			
+		<div class="header">
+			<a href="#"><img src="meli-logo.png" alt="Nuestro Logo" height=50px/></a>
+			<div class="header-center">
+				<a class = 'list-group-item'href="${createLink(controller:'BuscarPublicacion', action:'buscarPorTitulo')}"> Buscar publicaciones</a>
 			</div>
-			<div class="col-md-7 col-sm-7">
-				<h3>Amazon</h3>
+			<div class="header-right d-flex flex-row-reverse">
+				<nav>
+					<ul>
+						<li>
+							<g:if test = "${session.usuario != null }"></g:if>
+							<g:if test="${session.usuario == null }"> 				
+								<li><a class="button red" href="${createLink(controller:'Usuario', action:'create') }">Regístrate</a></li>
+								<a class="button red" href="/Meli/Usuario"><g:message code=""/>Ingresa</a>
+								
+							</g:if>
+							<g:else>
+								<span>Hola, ${session.usuario}</span>
+								<a href="${createLink(controller:'Usuario', action:'logout')}"> Logout</a></li>
+								<li><a href="#">Vende</a></li>
+							</g:else>
+						</li>
+						<li><a href="">Info</a></li>							
+					</ul>
+				</nav>
 			</div>
-			<div class="col-md-4 col-xs-4 text-center bottom-align-text">
-				<g:if test = "${session.usuario != null }">
-					
-				</g:if>
-				<g:if test="${session.usuario == null }"> 				
-					<a class="btn btn-default" href="Usuario"><g:message code="Login"/></a>
-				</g:if>
-				<g:else>
-					<span>Hola, ${session.usuario}</span>
-					<a href="${createLink(controller:'Usuario', action:'logout')}"> Logout</a></li>
-				</g:else>
-			</div>
-		</nav>
-		<div class="col-md-2 col-xs-3 list-group">			
-			<a class = 'list-group-item'href="#"> Buscar publicaciones</a></li>
 		</div>
+
 		<g:layoutBody/>
 	</body>
 </html>
