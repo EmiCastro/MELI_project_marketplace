@@ -3,6 +3,7 @@ package com.ar.meli.controllers
 
 import static org.springframework.http.HttpStatus.*
 import com.ar.meli.models.Publicacion
+import com.ar.meli.models.Usuario
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
@@ -22,6 +23,10 @@ class PublicacionController {
     def create() {
         respond new Publicacion(params)
     }
+	
+	def comprar(Publicacion publicacionInstance, Usuario comprador) {
+		respond publicacionInstance.comprar(comprador)
+	}
 
     @Transactional
     def save(Publicacion publicacionInstance) {
