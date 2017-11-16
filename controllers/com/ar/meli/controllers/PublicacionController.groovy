@@ -30,7 +30,7 @@ class PublicacionController {
 
     @Transactional
     def save(Publicacion publicacionInstance) {
-        if (publicacionInstance == null) {
+		if (publicacionInstance == null) {
             notFound()
             return
         }
