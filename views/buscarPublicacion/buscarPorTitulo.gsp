@@ -34,7 +34,7 @@
 				<tbody>
 						<g:each in="${publicaciones }" var="publicacion">
 					
-							<td>${publicacion.titulo }</td>
+							<td><a href="http://localhost:8050/Meli/publicacion/show/${publicacion.id}">${publicacion.titulo }</a></td>
 						
 							<td>${publicacion.descripcion }</td>
 						
