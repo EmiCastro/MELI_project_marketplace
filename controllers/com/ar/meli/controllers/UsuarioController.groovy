@@ -17,10 +17,6 @@ class UsuarioController {
 
 	}
 
-    def show(Usuario usuarioInstance) {
-        respond usuarioInstance
-    }
-
     def create() {
         respond new Usuario(params)
     }
@@ -42,55 +38,10 @@ class UsuarioController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuarioInstance.id])
-                redirect usuarioInstance
+                session.usuario = usuarioInstance
+				redirect(uri: '/')
             }
             '*' { respond usuarioInstance, [status: CREATED] }
-        }
-    }
-
-    def edit(Usuario usuarioInstance) {
-        respond usuarioInstance
-    }
-
-    @Transactional
-    def update(Usuario usuarioInstance) {
-        if (usuarioInstance == null) {
-            notFound()
-            return
-        }
-
-        if (usuarioInstance.hasErrors()) {
-            respond usuarioInstance.errors, view:'edit'
-            return
-        }
-
-        usuarioInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Usuario.label', default: 'Usuario'), usuarioInstance.id])
-                redirect usuarioInstance
-            }
-            '*'{ respond usuarioInstance, [status: OK] }
-        }
-    }
-
-    @Transactional
-    def delete(Usuario usuarioInstance) {
-
-        if (usuarioInstance == null) {
-            notFound()
-            return
-        }
-
-        usuarioInstance.delete flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Usuario.label', default: 'Usuario'), usuarioInstance.id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
         }
     }
 
