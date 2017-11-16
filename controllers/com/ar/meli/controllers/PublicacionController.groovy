@@ -21,22 +21,22 @@ class PublicacionController {
     }
 
     def create() {
-        respond new Publicacion(params)
+        respond new Publicacion()
     }
 
     @Transactional
     def save(Publicacion publicacionInstance) {
+		publicacionInstance.usuario = session.usuario
+		
 		if (publicacionInstance == null) {
             notFound()
             return
         }
 		
-        if (publicacionInstance.hasErrors()) {
+        if (!publicacionInstance.save()) {
             respond publicacionInstance.errors, view:'create'
             return
         }
-
-        publicacionInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
@@ -44,33 +44,6 @@ class PublicacionController {
                 redirect publicacionInstance
             }
             '*' { respond publicacionInstance, [status: CREATED] }
-        }
-    }
-
-    def edit(Publicacion publicacionInstance) {
-        respond publicacionInstance
-    }
-
-    @Transactional
-    def update(Publicacion publicacionInstance) {
-        if (publicacionInstance == null) {
-            notFound()
-            return
-        }
-
-        if (publicacionInstance.hasErrors()) {
-            respond publicacionInstance.errors, view:'edit'
-            return
-        }
-
-        publicacionInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Publicacion.label', default: 'Publicacion'), publicacionInstance.id])
-                redirect publicacionInstance
-            }
-            '*'{ respond publicacionInstance, [status: OK] }
         }
     }
 

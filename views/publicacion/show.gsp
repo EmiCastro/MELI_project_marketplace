@@ -61,9 +61,7 @@
 			
 				<g:if test="${publicacionInstance?.usuario}">
 				<li class="fieldcontain">
-					<span id="usuario-label" class="property-label"><g:message code="publicacion.usuario.label" default="Usuario" /></span>
-					
-						<span class="property-value" aria-labelledby="usuario-label"><g:link controller="usuario" action="show" id="${publicacionInstance?.usuario?.id}">${publicacionInstance?.usuario?.encodeAsHTML()}</g:link></span>
+					<span id="usuario-label" class="property-label"><g:message code="publicacion.usuario.label" default="Usuario" />${publicacionInstance?.usuario?.id }</span>
 					
 				</li>
 				</g:if>

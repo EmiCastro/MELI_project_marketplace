@@ -19,7 +19,7 @@
 	</head>
 	<body>
 		<div class="header">
-			<a href="#"><img src="meli-logo.png" alt="Nuestro Logo" height=50px/></a>
+			<a href="${createLink(uri: '/') }"><img src="meli-logo.png" alt="Nuestro Logo" height=50px/></a>
 			<div class="header-center">
 				<div class="flexsearch">
 					<div class="flexsearch-wrapper">
@@ -44,8 +44,8 @@
 							</g:if>
 							<g:else>
 								<span>Hola, ${session.usuario.email}</span>
-								<a class ="button red" href="${createLink(controller:'Usuario', action:'logout')}"> Logout</a></li>
-								<li><a href="#">Vende</a></li>
+								<a class ="button red" href="${createLink(controller:'Login', action:'logout')}"> Logout</a></li>
+								<li><a class="button red" href="${createLink(controller:'Publicacion', action:'create') }">Vende</a></li>
 							</g:else>
 						</li>
 						<li><a href="">Info</a></li>							
