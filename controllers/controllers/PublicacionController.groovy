@@ -1,6 +1,8 @@
+package controllers
 
 
 import static org.springframework.http.HttpStatus.*
+import com.ar.meli.models.Publicacion
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)

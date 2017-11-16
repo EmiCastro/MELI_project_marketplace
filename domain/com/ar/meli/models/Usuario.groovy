@@ -1,3 +1,4 @@
+package com.ar.meli.models
 
 class Usuario {
 	
