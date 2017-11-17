@@ -67,12 +67,9 @@
 				</g:if>
 			
 			</ol>
-			<g:form url="[resource:publicacionInstance, action:'delete']" method="DELETE">
-				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${publicacionInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:link class="Publicacion" action="comprar" resource="${publicacionInstance}"><g:message code="default.button.buy.label" default="Comprar" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
+			<g:form controller="comprar" action="realizarCompra" method="POST">
+				<g:hiddenField name="idPublicacion" value="${publicacionInstance.id}"/>
+				<g:submitButton name="Comprar!"/>
 			</g:form>
 		</div>
 	</body>

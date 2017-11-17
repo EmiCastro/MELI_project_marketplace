@@ -8,7 +8,7 @@ class LoginController {
 
 	LoginService loginService
 	
-	static allowedMethods = [login:"POST"]
+	static allowedMethods = [ login:'POST' ]
 	
     def index() { }
 	
