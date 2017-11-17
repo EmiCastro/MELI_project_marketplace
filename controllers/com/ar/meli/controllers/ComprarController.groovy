@@ -14,7 +14,6 @@ class ComprarController {
 	
 	def realizarCompra(){
 		comprarService.comprar(Publicacion.get(params.idPublicacion), session.usuario)
-		println params
 	}
 	
 }
