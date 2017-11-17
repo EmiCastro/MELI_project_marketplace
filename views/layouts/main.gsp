@@ -20,17 +20,23 @@
 	<body>
 		<div class="header">
 			<a href="${createLink(uri: '/') }"><img src="meli-logo.png" alt="Nuestro Logo" height=50px/></a>
-			<div class="header-center">
-				<div class="flexsearch">
-					<div class="flexsearch-wrapper">
-						<form class="flexsearch-form" action="${createLink(controller:'BuscarPublicacion', action:'buscarPorTitulo')}" method="post">
-							<div class="flexsearch-input-wrapper">
-								<input name="titulo" class="flexsearch-input" type="search" placeholder="Busca un producto">
-							</div>
-								<input class="flexsearch-submit" type="submit" value=""/>
-						</form>
+			<div class="header-center col-md-6">
+
+			<div class="container col-md-12">
+				<form>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Busca el producto que deseas" name="search">
+						<div class="input-group-btn text-center">
+							<button class="btn btn-default" type="submit">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
 					</div>
+				</form>
 			</div>
+
+
+
 		</div>
 			<div class="header-right d-flex flex-row-reverse">
 				<nav>
