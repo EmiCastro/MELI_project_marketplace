@@ -6,9 +6,9 @@ class Publicacion {
 	String titulo
 	String descripcion
 	Date fechaCreacion
-	Date fechaVencimiento
 	Boolean nuevo
 	Usuario usuario
+	Double precio
 	
 	static belongsTo = [usuario: Usuario]
 	

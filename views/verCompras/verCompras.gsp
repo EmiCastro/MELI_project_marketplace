@@ -4,6 +4,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
+		<asset:stylesheet src="verCompras.css"/>
 		<g:set var="entityName" value="${message(code: 'usuario.label', default: 'Usuario')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -32,12 +33,13 @@
 				</thead>
 				<tbody>
 						<g:each in="${compras}" var="c">
-					
+						<tr>
 							<td>${c.publicacion.titulo }</td>
 						
 							<td>${c.publicacion.descripcion }</td>
 						
 							<td>${c.fechaCompra }</td>
+						</tr>
 
 					</g:each>
 				</tbody>

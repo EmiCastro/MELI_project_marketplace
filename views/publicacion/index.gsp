@@ -28,7 +28,7 @@
 					
 						<g:sortableColumn property="fechaCreacion" title="${message(code: 'publicacion.fechaCreacion.label', default: 'Fecha Creacion')}" />
 					
-						<g:sortableColumn property="fechaVencimiento" title="${message(code: 'publicacion.fechaVencimiento.label', default: 'Fecha Vencimiento')}" />
+						<g:sortableColumn property="precio" title="${message(code: 'publicacion.precio.label', default: 'Precio')}" />
 					
 						<th><g:message code="publicacion.usuario.label" default="Usuario" /></th>
 					
@@ -44,9 +44,9 @@
 					
 						<td><g:formatDate date="${publicacionInstance.fechaCreacion}" /></td>
 					
-						<td><g:formatDate date="${publicacionInstance.fechaVencimiento}" /></td>
+						<td>${fieldValue(bean: publicacionInstance, field: "precio")}</td>
 					
-						<td>${fieldValue(bean: publicacionInstance, field: "usuario")}</td>
+						<td>${fieldValue(bean: publicacionInstance, field: "usuario.email")}</td>
 					
 					</tr>
 				</g:each>
