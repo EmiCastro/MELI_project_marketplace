@@ -1,6 +1,5 @@
 package com.ar.meli.models
 
-
 class Publicacion {
 	Long id
 	String titulo

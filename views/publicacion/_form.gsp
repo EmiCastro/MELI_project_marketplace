@@ -43,6 +43,6 @@
 		<g:message code="publicacion.nuevo.label" default="Nuevo?" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:checkBox name="nuevo" value="${publicacionInstance?.nuevo}"/>
+	<g:checkBox name="nuevo" value="${publicacionInstance?.nuevo }"/>
 </div>
 

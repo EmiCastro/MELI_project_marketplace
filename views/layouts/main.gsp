@@ -25,7 +25,7 @@
 					<div class="flexsearch-wrapper">
 						<form class="flexsearch-form" action="${createLink(controller:'BuscarPublicacion', action:'buscarPorTitulo')}" method="post">
 							<div class="flexsearch-input-wrapper">
-								<input class="flexsearch-input" type="search" placeholder="Busca un producto">
+								<input name="titulo" class="flexsearch-input" type="search" placeholder="Busca un producto">
 							</div>
 								<input class="flexsearch-submit" type="submit" value=""/>
 						</form>
