@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,3 +11,4 @@
 		<a href="http://localhost:8090/Meli/verCompras/verCompras">Ver compras realizadas</a>
 	</body>
 </html>
+
