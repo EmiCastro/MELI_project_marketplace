@@ -14,6 +14,7 @@ class ComprarController {
 	
 	def realizarCompra(){
 		comprarService.comprar(Publicacion.get(params.idPublicacion), session.usuario)
+		flash.message = "Compra realizada"
 		println params
 	}
 	
